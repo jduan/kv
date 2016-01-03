@@ -3,6 +3,8 @@ defmodule KV.RegistryTest do
 
   setup do
     {:ok, registry} = KV.Registry.start_link
+    # This is to show that a new registry process is created per test case!
+    # IO.puts "registry #{inspect registry} created!"
     {:ok, registry: registry}
   end
 
