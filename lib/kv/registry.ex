@@ -11,6 +11,13 @@ defmodule KV.Registry do
   end
 
   @doc """
+  Stop the registry.
+  """
+  def stop(server) do
+    GenServer.stop(server)
+  end
+
+  @doc """
   Look up the bucket pid for name.
 
   Return pid if the bucket exists, nil otherwise
