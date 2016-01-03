@@ -29,4 +29,11 @@ defmodule KV.RegistryTest do
     bucket2 = KV.Registry.lookup(registry, "shopping")
     assert bucket1 == bucket2
   end
+
+  test "remove buckets on exit", %{registry: registry} do
+    KV.Registry.create(registry, "shopping")
+    bucket = KV.Registry.lookup(registry, "shopping")
+    KV.Registry.stop(bucket)
+    assert KV.Registry.lookup(registry, "shopping") == nil
+  end
 end
