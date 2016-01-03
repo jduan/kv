@@ -18,3 +18,6 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [applications: [:kv]]
         end
 
+## code coverage
+mix coveralls
+mix coveralls.detail
